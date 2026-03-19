@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNYA | Premium Personal Branding</title>
+    <meta name="description" content="순야(Sunya)의 아트, 메세지, 코스와 세션을 위한 프리미엄 웹사이트">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Ambient Glowing Background -->
+    <div class="ambient-background">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="glow glow-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">SUNYA</a>
+            
+            <div class="nav-links">
+                <a href="#profile">Profile</a>
+                <a href="#messages">Messages</a>
+                <a href="#art">Art</a>
+                <a href="#courses">Courses</a>
+                <a href="#sessions">Sessions</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="currency-toggle" class="currency-toggle">
+                    <span class="currency-krw active">KRW</span>
+                    <span class="divider">/</span>
+                    <span class="currency-usd">USD</span>
+                </button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero fade-in">
+            <div class="hero-content">
+                <h2 class="hero-subtitle">Journey into Depth</h2>
+                <h1 class="hero-title">SUNYA</h1>
+                <p class="hero-description">고요의 세계, 페인팅과 설치 아트, 그리고 내면의 성장을 위한 프라이빗 세션.</p>
+                <a href="#profile" class="btn-primary">Discover More</a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span class="scroll-text">Scroll downwards</span>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="section profile-section reveal">
+            <div class="container section-container">
+                <div class="split-layout">
+                    <div class="image-wrapper glass-panel">
+                        <div class="image-placeholder profile-placeholder">
+                            <span>Profile Image<br>Placeholder</span>
+                        </div>
+                    </div>
+                    <div class="content-wrapper">
+                        <h3 class="section-label">Artist & Guide</h3>
+                        <h2 class="section-title">순야, Sunya</h2>
+                        <p class="section-text text-large">
+                            "침묵의 깊이에서 가장 진실된 언어를 발견합니다."
+                        </p>
+                        <p class="section-text">
+                            순야는 보이지 않는 내면의 우주를 캔버스와 공간에 구현하는 아티스트이자, 사람들의 영적 성장을 돕는 가이드입니다. 딥퍼플처럼 신비롭고 깊이 있는 그녀의 작업은 관람자에게 깊은 안식과 성찰의 시간을 제공합니다.
+                        </p>
+                        <a href="#art" class="btn-secondary">View Artworks</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages Section -->
+        <section id="messages" class="section messages-section reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h3 class="section-label">Journal & Insights</h3>
+                    <h2 class="section-title">Messages</h2>
+                </div>
+                
+                <div class="cards-grid messages-grid">
+                    <article class="glass-card message-card">
+                        <div class="card-date">Mar 19, 2026</div>
+                        <h4 class="card-title">어둠 속에서 피어나는 빛</h4>
+                        <p class="card-excerpt">우리가 가장 깊은 슬픔과 마주할 때, 존재의 진짜 빛이 비로소 드러난다...</p>
+                        <a href="#" class="read-more">Read Full Message &rarr;</a>
+                    </article>
+                    
+                    <article class="glass-card message-card">
+                        <div class="card-date">Feb 28, 2026</div>
+                        <h4 class="card-title">공간이 주는 위로</h4>
+                        <p class="card-excerpt">설치 미술은 단순히 작품을 놓는 것이 아니라, 숨 쉴 수 있는 여백을...</p>
+                        <a href="#" class="read-more">Read Full Message &rarr;</a>
+                    </article>
+
+                    <article class="glass-card message-card">
+                        <div class="card-date">Jan 15, 2026</div>
+                        <h4 class="card-title">프리미엄 세션의 의미</h4>
+                        <p class="card-excerpt">당신의 내면을 마주하는 가장 고급스럽고 안전한 영적 여정...</p>
+                        <a href="#" class="read-more">Read Full Message &rarr;</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Art Section -->
+        <section id="art" class="section art-section reveal">
+            <div class="container">
+                <div class="section-header flex-header">
+                    <div>
+                        <h2 class="section-title">Art Collection</h2>
+                        <p class="section-subtitle">Paintings and installations manifesting the unseen inner worlds.<br>Limited to exclusive exhibitions and private collectors.</p>
+                    </div>
+                    <a href="#" class="view-all-link">View Full Collection</a>
+                </div>
+                
+                <div class="art-cards">
+                    <!-- Art Card 1 -->
+                    <div class="art-card">
+                        <div class="art-image-wrapper">
+                            <img src="assets/art1.png" alt="The Zen Passage" class="art-img">
+                            <div class="art-overlay">
+                                <button class="btn-art-action" onclick="alert('Inquiry form will open here.')">INQUIRE WORK</button>
+                            </div>
+                        </div>
+                        <div class="art-meta-top">
+                            <span class="art-category">OIL PAINTING</span>
+                            <span class="art-date">DEC 2025</span>
+                        </div>
+                        <h4 class="art-title">The Zen Passage</h4>
+                        <p class="art-desc">Private Studio • Kyoto, Japan</p>
+                    </div>
+                    
+                    <!-- Art Card 2 -->
+                    <div class="art-card">
+                        <div class="art-image-wrapper">
+                            <img src="assets/art2.png" alt="Urban Echoes" class="art-img">
+                            <div class="art-overlay">
+                                <button class="btn-art-action" onclick="alert('Reservation form will open here.')">RESERVE INSTALLATION</button>
+                            </div>
+                        </div>
+                        <div class="art-meta-top">
+                            <span class="art-category">SPATIAL INSTALLATION</span>
+                            <span class="art-date">JAN 2026</span>
+                        </div>
+                        <h4 class="art-title">Urban Echoes</h4>
+                        <p class="art-desc">The Concrete Vault • Berlin, Germany</p>
+                    </div>
+
+                    <!-- Art Card 3 -->
+                    <div class="art-card">
+                        <div class="art-image-wrapper">
+                            <img src="assets/art3.png" alt="Elemental Void" class="art-img">
+                            <div class="art-overlay">
+                                <button class="btn-art-action" onclick="alert('Added to waiting list.')">WAITING LIST ONLY</button>
+                            </div>
+                        </div>
+                        <div class="art-meta-top">
+                            <span class="art-category">ACRYLIC CANVAS</span>
+                            <span class="art-date">FEB 2026</span>
+                        </div>
+                        <h4 class="art-title">Elemental Void</h4>
+                        <p class="art-desc">Obsidian Shores • Reykjavik, Iceland</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section: Courses & Sessions -->
+        <section id="services" class="section services-section reveal">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h3 class="section-label">Transformation & Growth</h3>
+                    <h2 class="section-title">Exclusive Offerings</h2>
+                    <p class="section-subtitle">국내외 어디서든 결제 및 참여가 가능합니다.</p>
+                </div>
+
+                <div class="cards-grid services-grid">
+                    <!-- Online Course -->
+                    <div id="courses" class="glass-card service-card">
+                        <div class="service-icon">💻</div>
+                        <h4 class="card-title">Online Courses</h4>
+                        <p class="card-description">전 세계 어디서나 접근 가능한 온라인 내면 성찰 코스. 비디오 레슨과 매주 주어지는 실천 과제.</p>
+                        <ul class="service-features">
+                            <li>4주 완성 커리큘럼</li>
+                            <li>프라이빗 커뮤니티 접근</li>
+                            <li>PDF 워크북 제공</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="price-tag" data-krw="₩450,000" data-usd="$350">₩450,000</div>
+                            <button class="btn-primary btn-book" onclick="openPaymentModal('Online Course')">Enroll Now</button>
+                        </div>
+                    </div>
+
+                    <!-- Offline Session -->
+                    <div id="sessions" class="glass-card service-card featured">
+                        <div class="service-badge">Premium</div>
+                        <div class="service-icon">✨</div>
+                        <h4 class="card-title">Offline Sessions</h4>
+                        <p class="card-description">순야의 프라이빗 스튜디오에서 진행되는 1:1 대면 세션. 싱잉볼과 아트 테라피의 결합.</p>
+                        <ul class="service-features">
+                            <li>120분 프라이빗 세션</li>
+                            <li>맞춤형 향기와 차 제공</li>
+                            <li>세션 후 개인 피드백</li>
+                        </ul>
+                        <div class="service-footer">
+                            <div class="price-tag" data-krw="₩1,200,000" data-usd="$950">₩1,200,000</div>
+                            <button class="btn-primary btn-book" onclick="openPaymentModal('Offline Session')">Book Session</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mock Payment Modal -->
+        <div id="payment-modal" class="modal">
+            <div class="modal-content glass-card">
+                <span class="close-modal">&times;</span>
+                <h3 class="modal-title">Secure Checkout</h3>
+                <p id="modal-product-name" class="modal-product">Product Name</p>
+                
+                <div class="payment-options">
+                    <div class="payment-option">
+                        <input type="radio" id="pay-domestic" name="payment_type" checked>
+                        <label for="pay-domestic">국내 결제 (신용카드/계좌이체)</label>
+                    </div>
+                    <div class="payment-option">
+                        <input type="radio" id="pay-international" name="payment_type">
+                        <label for="pay-international">International (PayPal / Stripe)</label>
+                    </div>
+                </div>
+
+                <button class="btn-primary full-width" onclick="alert('결제 모듈로 연동됩니다. (Payment Gateway integration placeholder)')">Proceed to Payment</button>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <h2>SUNYA</h2>
+                <p>Inner depth, artistic expressions, and premium guidance.</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Menu</h4>
+                    <a href="#profile">Profile</a>
+                    <a href="#messages">Messages</a>
+                    <a href="#art">Art Gallery</a>
+                </div>
+                <div class="link-group">
+                    <h4>Services</h4>
+                    <a href="#courses">Online Courses</a>
+                    <a href="#sessions">Offline Sessions</a>
+                </div>
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 SUNYA. All Rights Reserved. 국내외 결제 지원 (Global Payment Supported).</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
