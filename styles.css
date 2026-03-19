@@ -450,10 +450,6 @@ p:lang(ko) {
     height: 100%;
     object-fit: cover;
     object-position: top center;
-    /* Softly blend the white background edges into the dark purple */
-    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 75%);
-    mask-image: radial-gradient(circle at center, black 40%, transparent 75%);
-    filter: sepia(0.2) hue-rotate(240deg) contrast(1.1) brightness(0.9);
 }
 
 /* Messages Grid */
