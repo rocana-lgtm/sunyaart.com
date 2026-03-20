@@ -1,22 +1,28 @@
-/* CSS Custom Properties for Premium Deep Purple Theme */
+/* Deep Purple Fluent Design System Variables */
 :root {
-    --color-bg-dark: #0B0515;       /* Very dark, almost black purple */
-    --color-bg-surface: #170A2A;    /* Dark purple for cards */
-    --color-primary: #3B1C6D;       /* Deep purple */
-    --color-primary-light: #5B2C9D; /* Lighter purple for hovers */
-    --color-accent: #D4AF37;        /* Luxurious Gold */
-    --color-accent-hover: #F2E3C6;  /* Soft champagne gold */
-    --color-text-main: #F4F0F9;     /* Off-white with slight purple tint */
-    --color-text-muted: #A396B4;    /* Muted purpleish grey */
-    --color-glass-bg: rgba(23, 10, 42, 0.4);
-    --color-glass-border: rgba(212, 175, 55, 0.15); /* Gold tinted border */
+    --color-bg-dark: #120A1A;       /* Very dark purple-gray (Mica base) */
+    --color-bg-surface: #1C1226;    /* Dark purple for Acrylic cards */
+    --color-primary: #8A2BE2;       /* Fluent deep purple accent */
+    --color-primary-light: #A55EEA; /* Lighter purple accent */
+    --color-accent: #B68BEC;        /* Soft purple/lilac for elegant highlights */
+    --color-accent-hover: #D4B9F5;  /* Brighter lilac for hover */
+    --color-text-main: #FAFAFA;     /* Clean white */
+    --color-text-muted: #A59DB1;    /* Muted grey-purple */
     
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Outfit', sans-serif;
+    --color-glass-bg: rgba(28, 18, 38, 0.65); /* Acrylic backdrop */
+    --color-glass-border: rgba(255, 255, 255, 0.08); /* Fluent subtle border */
+    
+    --font-heading: 'Inter', sans-serif;
+    --font-body: 'Inter', sans-serif;
     --font-korean: 'Noto Serif KR', serif;
 
-    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --transition-slow: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --radius-card: 12px;
+    --radius-btn: 6px;
+    --shadow-flyout: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.25);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1);
+    --transition-slow: all 0.6s cubic-bezier(0.2, 0.9, 0.4, 1);
 }
 
 /* Base Styles */
@@ -28,7 +34,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 body {
@@ -43,12 +49,13 @@ body {
 /* Typography Customization for Korean/English mixed */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
     color: var(--color-text-main);
 }
 h1:lang(ko), h2:lang(ko), h3:lang(ko), h4:lang(ko), h5:lang(ko), h6:lang(ko) {
     font-family: var(--font-korean);
+    font-weight: 600;
 }
 
 a {
@@ -158,53 +165,54 @@ p:lang(ko) {
 /* Buttons */
 .btn-primary, .btn-secondary {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    border-radius: 0;
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-btn);
     font-family: var(--font-body);
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
     cursor: pointer;
     border: 1px solid transparent;
     transition: var(--transition-smooth);
 }
 
 .btn-primary {
-    background-color: var(--color-accent);
-    color: var(--color-bg-dark);
+    background-color: var(--color-primary);
+    color: var(--color-text-main);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .btn-primary:hover {
-    background-color: var(--color-accent-hover);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    background-color: var(--color-primary-light);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--color-accent);
-    border-color: var(--color-accent);
+    color: var(--color-text-main);
+    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-accent);
-    color: var(--color-bg-dark);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .full-width { width: 100%; text-align: center; }
 
-/* Glassmorphism Classes */
+/* Acrylic / Mica Classes */
 .glass-panel, .glass-card {
     background: var(--color-glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(24px) saturate(120%);
+    -webkit-backdrop-filter: blur(24px) saturate(120%);
     border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-card);
     transition: var(--transition-smooth);
 }
 
 .glass-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(212, 175, 55, 0.4);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: var(--shadow-flyout);
 }
 
 /* Image Placeholders */
@@ -506,14 +514,14 @@ p:lang(ko) {
     color: var(--color-accent);
     font-size: 0.9rem;
     letter-spacing: 1px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 4px;
     text-transform: uppercase;
 }
 
 .view-all-link:hover {
     border-color: var(--color-accent);
-    color: #fff;
+    color: var(--color-text-main);
 }
 
 .art-cards {
@@ -551,7 +559,7 @@ p:lang(ko) {
     position: absolute;
     bottom: 0; left: 0; right: 0;
     padding: 1.5rem;
-    background: linear-gradient(to top, rgba(11,5,21,0.9), transparent);
+    background: linear-gradient(to top, rgba(18, 10, 26, 0.9), transparent);
     display: flex;
     justify-content: center;
     opacity: 0;
@@ -567,20 +575,22 @@ p:lang(ko) {
 .btn-art-action {
     width: 100%;
     padding: 1rem;
-    background: rgba(45, 27, 78, 0.6);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(138, 43, 226, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-btn);
     color: var(--color-text-main);
     font-family: var(--font-body);
     font-size: 0.8rem;
-    letter-spacing: 2px;
+    font-weight: 600;
+    letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(8px);
     transition: var(--transition-smooth);
 }
 
 .btn-art-action:hover {
-    background: rgba(212, 175, 55, 0.2);
+    background: rgba(255, 255, 255, 0.15);
     border-color: var(--color-accent);
 }
 
@@ -846,4 +856,68 @@ footer {
     .hero-title { font-size: 4rem; }
     .art-cards { grid-template-columns: 1fr; }
     .footer-links { flex-direction: column; gap: 2rem; }
+}
+
+/* Scrollytelling & 3D WebGL Layers */
+#webgl-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--color-bg-dark); /* Fallback */
+}
+
+.story-container {
+    position: relative;
+    z-index: 10;
+}
+
+.chapter {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 6rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.chapter.align-center {
+    align-items: center;
+}
+
+.chapter.align-split {
+    align-items: center;
+}
+
+.chapter-content {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.chapter-content.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Ensure no visual layout janks before GSAP initializes */
+.gsap-fade-up, .gsap-fade-left, .gsap-fade-right {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (max-width: 992px) {
+    .chapter-content.split-layout {
+        grid-template-columns: 1fr;
+        direction: ltr !important; /* Reset direction */
+        text-align: center;
+    }
+    .chapter-content.split-layout > div {
+        direction: ltr !important;
+    }
+    .chapter {
+        padding: 4rem 1.5rem;
+    }
 }
