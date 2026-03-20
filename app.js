@@ -3,13 +3,28 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Navigation Scrolled State & Currency Toggle
     const navbar = document.querySelector('.navbar');
     if(navbar) {
+        let navbarTimeout;
+        const showNavbar = () => {
+            navbar.classList.add('visible');
+            clearTimeout(navbarTimeout);
+            navbarTimeout = setTimeout(() => {
+                if (!navbar.matches(':hover')) {
+                    navbar.classList.remove('visible');
+                }
+            }, 2000);
+        };
+
         window.addEventListener('scroll', () => {
+            showNavbar();
             if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         });
+
+        document.addEventListener('mousemove', showNavbar);
+        showNavbar(); // Initially show
     }
 
     const toggleBtn = document.getElementById('currency-toggle');
