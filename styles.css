@@ -234,8 +234,17 @@ p:lang(ko) {
     top: 0; left: 0; right: 0;
     padding: 1.5rem 0;
     z-index: 100;
-    transition: var(--transition-smooth);
+    transition: transform 0.4s ease, opacity 0.4s ease, background 0.3s, padding 0.3s;
     border-bottom: 1px solid transparent;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navbar.visible {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .navbar.scrolled {
@@ -760,6 +769,18 @@ p:lang(ko) {
 
 .payment-option:hover {
     background: rgba(255,255,255,0.05);
+}
+
+/* Fullscreen Intro */
+#chapter-intro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#chapter-intro .chapter-content {
+    margin: auto;
 }
 
 /* Footer */
