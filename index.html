@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SUNYA | Premium Personal Branding</title>
-    <meta name="description" content="순야(Sunya)의 아트, 메세지, 코스와 세션을 위한 프리미엄 웹사이트">
+    <title>SUNYA | Journey into Depth</title>
+    <meta name="description" content="순야(Sunya)의 시각적 스토리텔링, 파인 아트, 내면 세션, 그리고 저서">
     
-    <!-- Fonts -->
+    <!-- Fonts for Fluent Design -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
     
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- WebGL & Animation Dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
 
-    <!-- Ambient Glowing Background -->
-    <div class="ambient-background">
-        <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
-        <div class="glow glow-3"></div>
-    </div>
+    <!-- WebGL 3D Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
 
     <!-- Navigation -->
     <nav class="navbar">
@@ -28,11 +30,10 @@
             <a href="#" class="logo">SUNYA</a>
             
             <div class="nav-links">
-                <a href="#profile">Profile</a>
-                <a href="#messages">Messages</a>
-                <a href="#art">Art</a>
-                <a href="#courses">Courses</a>
-                <a href="#sessions">Sessions</a>
+                <a href="#chapter-intro">Philosophy</a>
+                <a href="#chapter-art">Art Gallery</a>
+                <a href="#chapter-sessions">Sessions</a>
+                <a href="#chapter-books">Books</a>
             </div>
 
             <div class="nav-actions">
@@ -42,223 +43,114 @@
                     <span class="currency-usd">USD</span>
                 </button>
                 <div class="hamburger">
-                    <span></span>
-                    <span></span>
+                    <span></span><span></span>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero fade-in">
-            <div class="hero-content">
-                <h2 class="hero-subtitle">Journey into Depth</h2>
-                <h1 class="hero-title">SUNYA</h1>
-                <p class="hero-description">고요의 세계, 페인팅과 설치 아트, 그리고 내면의 성장을 위한 프라이빗 세션.</p>
-                <a href="#profile" class="btn-primary">Discover More</a>
-            </div>
-            <div class="scroll-indicator">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-                <span class="scroll-text">Scroll downwards</span>
-            </div>
-        </section>
-
-        <!-- Profile Section -->
-        <section id="profile" class="section profile-section reveal">
-            <div class="container section-container">
-                <div class="split-layout">
-                    <div class="image-wrapper glass-panel profile-glass">
-                        <img src="assets/sunya-profile.jpg" alt="Sunya Master Profile" class="profile-img">
-                    </div>
-                    <div class="content-wrapper">
-                        <h3 class="section-label">Master & Founder</h3>
-                        <h2 class="section-title">순야, Sunya</h2>
-                        <p class="section-text text-large" style="margin-bottom: 1.5rem;">
-                            "존재의 깊은 곳으로 향하는 여정, 그 고요한 길을 안내합니다."
-                        </p>
-                        <p class="section-text" style="margin-bottom: 2rem;">
-                            1999년부터 이어져 온 <b>리탐빌(Ritamville) 요가명상센터</b>의 설립자이자 <b>홀리스틱 명상 컨설팅 대표</b>입니다. 지난 27년간 6만 명이 넘는 사람들에게 내면의 평화와 의식 성장을 안내해 온 글로벌 명상 마스터입니다.
-                        </p>
-                        <ul class="profile-credentials" style="list-style: none; margin-bottom: 2.5rem; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8;">
-                            <li><span style="color: var(--color-accent); margin-right: 8px;">✦</span> <b>로움리트릿(Roum Retreat)</b> 메인 마스터 및 안내자</li>
-                            <li><span style="color: var(--color-accent); margin-right: 8px;">✦</span> <b>국제 명상 페스티벌</b> & 슈퍼 소울 릴레이 주최 위원장</li>
-                            <li><span style="color: var(--color-accent); margin-right: 8px;">✦</span> <b>비영리사단법인 슈퍼소울릴레이</b> 이사장</li>
-                        </ul>
-                        <a href="#art" class="btn-secondary">View Holistic Artworks</a>
+    <!-- Main Scrollytelling Container -->
+    <main class="story-container">
+        
+        <!-- Chapter 1: The Intro -->
+        <section id="chapter-intro" class="chapter align-center">
+            <div class="chapter-content text-center">
+                <h2 class="hero-subtitle gsap-fade-up">Journey into Depth</h2>
+                <h1 class="hero-title gsap-fade-up">SUNYA</h1>
+                <p class="hero-description gsap-fade-up" style="margin: 0 auto 3rem auto;">
+                    존재의 깊은 곳으로 향하는 고요한 길.<br>
+                    순야의 예술적 비전과 영적 여정이 교차하는 공간입니다.
+                </p>
+                <div class="gsap-fade-up">
+                    <div class="mouse">
+                        <div class="wheel"></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Messages Section -->
-        <section id="messages" class="section messages-section reveal">
-            <div class="container">
-                <div class="section-header text-center">
-                    <h3 class="section-label">Journal & Insights</h3>
-                    <h2 class="section-title">Messages</h2>
+        <!-- Chapter 2: The Art -->
+        <section id="chapter-art" class="chapter align-split">
+            <div class="chapter-content split-layout">
+                <div class="chapter-text gsap-fade-right">
+                    <h3 class="section-label">Fine Art Collection</h3>
+                    <h2 class="section-title">Visualizing the Unseen</h2>
+                    <p class="section-text text-large" style="margin-bottom: 1.5rem;">
+                        "그림은 캔버스 위에 머무는 명상입니다."
+                    </p>
+                    <p class="section-text" style="color: var(--color-text-muted); margin-bottom: 2.5rem;">
+                        순야 마스터의 심상을 시각화한 설치 미술과 아크릴 페인팅. 
+                        오직 프라이빗 컬렉터를 위해 열려 있는 고요의 조각들을 만나보세요.
+                    </p>
+                    <button class="btn-primary" onclick="window.openPaymentModal('Art Inquiry')">Inquire Artwork</button>
                 </div>
-                
-                <div class="cards-grid messages-grid">
-                    <article class="glass-card message-card">
-                        <div class="card-date">Mar 19, 2026</div>
-                        <h4 class="card-title">어둠 속에서 피어나는 빛</h4>
-                        <p class="card-excerpt">우리가 가장 깊은 슬픔과 마주할 때, 존재의 진짜 빛이 비로소 드러난다...</p>
-                        <a href="#" class="read-more">Read Full Message &rarr;</a>
-                    </article>
-                    
-                    <article class="glass-card message-card">
-                        <div class="card-date">Feb 28, 2026</div>
-                        <h4 class="card-title">공간이 주는 위로</h4>
-                        <p class="card-excerpt">설치 미술은 단순히 작품을 놓는 것이 아니라, 숨 쉴 수 있는 여백을...</p>
-                        <a href="#" class="read-more">Read Full Message &rarr;</a>
-                    </article>
-
-                    <article class="glass-card message-card">
-                        <div class="card-date">Jan 15, 2026</div>
-                        <h4 class="card-title">프리미엄 세션의 의미</h4>
-                        <p class="card-excerpt">당신의 내면을 마주하는 가장 고급스럽고 안전한 영적 여정...</p>
-                        <a href="#" class="read-more">Read Full Message &rarr;</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Art Section -->
-        <section id="art" class="section art-section reveal">
-            <div class="container">
-                <div class="section-header flex-header">
-                    <div>
-                        <h2 class="section-title">Art Collection</h2>
-                        <p class="section-subtitle">Paintings and installations manifesting the unseen inner worlds.<br>Limited to exclusive exhibitions and private collectors.</p>
-                    </div>
-                    <a href="#" class="view-all-link">View Full Collection</a>
-                </div>
-                
-                <div class="art-cards">
-                    <!-- Art Card 1 -->
-                    <div class="art-card">
-                        <div class="art-image-wrapper">
-                            <img src="assets/art1.png" alt="The Zen Passage" class="art-img">
-                            <div class="art-overlay">
-                                <button class="btn-art-action" onclick="alert('Inquiry form will open here.')">INQUIRE WORK</button>
-                            </div>
-                        </div>
-                        <div class="art-meta-top">
-                            <span class="art-category">OIL PAINTING</span>
-                            <span class="art-date">DEC 2025</span>
-                        </div>
-                        <h4 class="art-title">The Zen Passage</h4>
-                        <p class="art-desc">Private Studio • Kyoto, Japan</p>
-                    </div>
-                    
-                    <!-- Art Card 2 -->
-                    <div class="art-card">
-                        <div class="art-image-wrapper">
-                            <img src="assets/art2.png" alt="Urban Echoes" class="art-img">
-                            <div class="art-overlay">
-                                <button class="btn-art-action" onclick="alert('Reservation form will open here.')">RESERVE INSTALLATION</button>
-                            </div>
-                        </div>
-                        <div class="art-meta-top">
-                            <span class="art-category">SPATIAL INSTALLATION</span>
-                            <span class="art-date">JAN 2026</span>
-                        </div>
-                        <h4 class="art-title">Urban Echoes</h4>
-                        <p class="art-desc">The Concrete Vault • Berlin, Germany</p>
-                    </div>
-
-                    <!-- Art Card 3 -->
-                    <div class="art-card">
-                        <div class="art-image-wrapper">
-                            <img src="assets/art3.png" alt="Elemental Void" class="art-img">
-                            <div class="art-overlay">
-                                <button class="btn-art-action" onclick="alert('Added to waiting list.')">WAITING LIST ONLY</button>
-                            </div>
-                        </div>
-                        <div class="art-meta-top">
-                            <span class="art-category">ACRYLIC CANVAS</span>
-                            <span class="art-date">FEB 2026</span>
-                        </div>
-                        <h4 class="art-title">Elemental Void</h4>
-                        <p class="art-desc">Obsidian Shores • Reykjavik, Iceland</p>
+                <div class="chapter-visual gsap-fade-left">
+                    <div class="glass-panel" style="aspect-ratio: 3/4; overflow: hidden; padding: 0;">
+                        <img src="assets/art1.png" alt="The Zen Passage" class="art-img" style="width:100%; height:100%; object-fit:cover;">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section: Courses & Sessions -->
-        <section id="services" class="section services-section reveal">
-            <div class="container">
-                <div class="section-header text-center">
+        <!-- Chapter 3: Private Sessions & Courses -->
+        <section id="chapter-sessions" class="chapter align-split reverse">
+            <div class="chapter-content split-layout" style="direction: rtl;">
+                <div class="chapter-text gsap-fade-left" style="direction: ltr;">
                     <h3 class="section-label">Transformation & Growth</h3>
-                    <h2 class="section-title">Exclusive Offerings</h2>
-                    <p class="section-subtitle">국내외 어디서든 결제 및 참여가 가능합니다.</p>
-                </div>
-
-                <div class="cards-grid services-grid">
-                    <!-- Online Course -->
-                    <div id="courses" class="glass-card service-card">
-                        <div class="service-icon">💻</div>
-                        <h4 class="card-title">Online Courses</h4>
-                        <p class="card-description">전 세계 어디서나 접근 가능한 온라인 내면 성찰 코스. 비디오 레슨과 매주 주어지는 실천 과제.</p>
-                        <ul class="service-features">
-                            <li>4주 완성 커리큘럼</li>
-                            <li>프라이빗 커뮤니티 접근</li>
-                            <li>PDF 워크북 제공</li>
-                        </ul>
-                        <div class="service-footer">
-                            <div class="price-tag" data-krw="₩450,000" data-usd="$350">₩450,000</div>
-                            <button class="btn-primary btn-book" onclick="openPaymentModal('Online Course')">Enroll Now</button>
-                        </div>
+                    <h2 class="section-title">The Inner Journey</h2>
+                    <p class="section-text" style="color: var(--color-text-muted); margin-bottom: 2.5rem;">
+                        전 세계 6만 명의 의식 성장을 이끈 리탐빌(Ritamville)의 정수가 담긴 프리미엄 세션.
+                        온라인 코스와 1:1 오프라인 리트릿을 통해 당신 안의 가장 평온한 휴식처를 찾으세요.
+                    </p>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <button class="btn-primary" onclick="window.openPaymentModal('Offline Retreat')">Book Retreat <span class="price-tag" data-krw="₩1,200,000" data-usd="$950" style="font-size:1rem; margin-left:8px;">₩1,200,000</span></button>
+                        <button class="btn-secondary" onclick="window.openPaymentModal('Online Course')">Online Course <span class="price-tag" data-krw="₩450,000" data-usd="$350" style="font-size:1rem; margin-left:8px;">₩450,000</span></button>
                     </div>
-
-                    <!-- Offline Session -->
-                    <div id="sessions" class="glass-card service-card featured">
-                        <div class="service-badge">Premium</div>
-                        <div class="service-icon">✨</div>
-                        <h4 class="card-title">Offline Sessions</h4>
-                        <p class="card-description">순야의 프라이빗 스튜디오에서 진행되는 1:1 대면 세션. 싱잉볼과 아트 테라피의 결합.</p>
-                        <ul class="service-features">
-                            <li>120분 프라이빗 세션</li>
-                            <li>맞춤형 향기와 차 제공</li>
-                            <li>세션 후 개인 피드백</li>
+                </div>
+                <div class="chapter-visual gsap-fade-right" style="direction: ltr;">
+                    <div class="glass-card" style="padding: 3rem; text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1.5rem;">✨</div>
+                        <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">Holistic Experience</h4>
+                        <ul class="service-features" style="text-align: left;">
+                            <li>프라이빗 커뮤니티 & 싱잉볼 테라피</li>
+                            <li>정기 줌 라이브 명상 피드백</li>
+                            <li>로움리트릿 1:1 대면 지도</li>
                         </ul>
-                        <div class="service-footer">
-                            <div class="price-tag" data-krw="₩1,200,000" data-usd="$950">₩1,200,000</div>
-                            <button class="btn-primary btn-book" onclick="openPaymentModal('Offline Session')">Book Session</button>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mock Payment Modal -->
-        <div id="payment-modal" class="modal">
-            <div class="modal-content glass-card">
-                <span class="close-modal">&times;</span>
-                <h3 class="modal-title">Secure Checkout</h3>
-                <p id="modal-product-name" class="modal-product">Product Name</p>
+        <!-- Chapter 4: The Books -->
+        <section id="chapter-books" class="chapter align-center">
+            <div class="chapter-content text-center">
+                <h3 class="section-label gsap-fade-up">Published Works</h3>
+                <h2 class="section-title gsap-fade-up">The Books</h2>
+                <p class="section-text gsap-fade-up" style="max-width: 600px; margin: 0 auto 3rem auto; color: var(--color-text-muted);">
+                    당신의 일상 곁에 머물며 언제든 지혜를 건네는 순야 마스터의 저서. 
+                    읽는 것만으로도 호흡이 편안해집니다.
+                </p>
                 
-                <div class="payment-options">
-                    <div class="payment-option">
-                        <input type="radio" id="pay-domestic" name="payment_type" checked>
-                        <label for="pay-domestic">국내 결제 (신용카드/계좌이체)</label>
-                    </div>
-                    <div class="payment-option">
-                        <input type="radio" id="pay-international" name="payment_type">
-                        <label for="pay-international">International (PayPal / Stripe)</label>
+                <div class="cards-grid gsap-fade-up" style="justify-content: center;">
+                    <!-- Book 1 -->
+                    <div class="glass-card service-card" style="padding: 2rem; max-width: 340px; text-align: left; margin: 0 auto;">
+                        <div style="background: var(--color-bg-dark); aspect-ratio: 2/3; margin-bottom: 1.5rem; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-glass-border);">
+                            <span style="color: var(--color-text-muted); font-style: italic;">Book Cover Image</span>
+                        </div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem;">고요가 머무는 자리</h4>
+                        <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">출판사 리뷰 1위. 내면의 목소리를 듣기 위한 안내서.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span class="price-tag" data-krw="₩22,000" data-usd="$18" style="font-size: 1.2rem;">₩22,000</span>
+                            <button class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.8rem;" onclick="window.openPaymentModal('Book - 고요가 머무는 자리')">Buy Now</button>
+                        </div>
                     </div>
                 </div>
-
-                <button class="btn-primary full-width" onclick="alert('결제 모듈로 연동됩니다. (Payment Gateway integration placeholder)')">Proceed to Payment</button>
             </div>
-        </div>
+        </section>
 
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container footer-container">
             <div class="footer-brand">
@@ -268,15 +160,10 @@
             
             <div class="footer-links">
                 <div class="link-group">
-                    <h4>Menu</h4>
-                    <a href="#profile">Profile</a>
-                    <a href="#messages">Messages</a>
-                    <a href="#art">Art Gallery</a>
-                </div>
-                <div class="link-group">
-                    <h4>Services</h4>
-                    <a href="#courses">Online Courses</a>
-                    <a href="#sessions">Offline Sessions</a>
+                    <h4>Discover</h4>
+                    <a href="#chapter-art">Art Gallery</a>
+                    <a href="#chapter-sessions">Sessions</a>
+                    <a href="#chapter-books">Books</a>
                 </div>
                 <div class="link-group">
                     <h4>Legal</h4>
@@ -287,11 +174,33 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 SUNYA. All Rights Reserved. 국내외 결제 지원 (Global Payment Supported).</p>
+                <p>&copy; 2026 SUNYA. All Rights Reserved. 글로벌 결제 지원.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Mock Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content glass-card">
+            <span class="close-modal">&times;</span>
+            <h3 class="modal-title">Secure Checkout</h3>
+            <p id="modal-product-name" class="modal-product">Product Name</p>
+            
+            <div class="payment-options">
+                <div class="payment-option">
+                    <input type="radio" id="pay-domestic" name="payment_type" checked>
+                    <label for="pay-domestic">국내 ₩ 결제 (카드/계좌)</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="pay-international" name="payment_type">
+                    <label for="pay-international">Global $ (PayPal)</label>
+                </div>
+            </div>
+            <button class="btn-primary full-width" onclick="alert('결제 / 예약 모듈로 연동됩니다.')">Proceed</button>
+        </div>
+    </div>
+
+    <!-- Core App Logic (WebGL & GSAP) -->
     <script src="app.js"></script>
 </body>
 </html>
